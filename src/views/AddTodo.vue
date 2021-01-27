@@ -4,11 +4,11 @@
     <div class="fields">
       <div class="author">
         <img src="../assets/smile.svg" alt="" />
-        <input type="text" placeholder="This todo belongs to" v-model="name" />
+        <input type="text" placeholder="This todo belongs to" required v-model="name" />
       </div>
       <div class="todo-text">
         <img src="../assets/pen.svg" alt="" />
-        <input type="text" placeholder="Description" v-model="title" />
+        <input type="text" placeholder="Description" required v-model="title" />
       </div>
     </div>
     <button class="add-button">ADD TODO</button>
@@ -24,21 +24,33 @@ export default {
       id: 1,
       title: "",
       name: "",
-      addedOn: "",
+      date: null,
+      
     };
   },
 
+
+
   methods: {
     createTodo() {
+      let dateTime = new Date;
+    
       let newTodo = {
         title: this.title,
         name: this.name,
+        date: dateTime,
       };
+      
       this.$store.commit("addNewTodo", newTodo);
       this.$router.push({ name: "TodoList" });
     },
+
+
+  
   },
 };
+
+
 </script>
 
 <style scoped>

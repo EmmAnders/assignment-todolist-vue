@@ -1,16 +1,16 @@
 <template>
   <div class="todo-item">
-    <p class="name">{{ todo.name }}'s todo | Added On: {{addedOn}}</p>
+    <p class="name">{{ todo.name }}'s todo | Added On: {{todo.date}}</p>
 
     <div class="name-wrapper">
       <div class="card-title">
         <p>{{ todo.title }}</p>
       </div>
       <div class="buttons">
-        <button class="check-button">
+        <button @click.prevent="completeTodo" class="check-button">
           <img src="../assets/check.svg" alt="" />
         </button>
-        <button @click.prevent="deleteTodo" class="trash-button">
+        <button  @click.prevent="deleteTodo" class="trash-button">
         <img src="../assets/trash.svg" alt="" />
         </button>
       </div>
@@ -25,6 +25,9 @@ export default {
   methods: {
     deleteTodo() {
       this.$store.commit("deleteTodo", this.todo);
+    },
+    completeTodo() {
+    this.$store.commit("toggleCheck", this.todo);
     },
   },
 };
@@ -93,5 +96,9 @@ button:hover {
 button:active {
   border-radius: 25px;
   box-shadow: inset 8px 8px 8px #cbced1, inset -8px -8px 8px #ffffff;
+}
+
+.done{
+  background-color: pink; 
 }
 </style>
