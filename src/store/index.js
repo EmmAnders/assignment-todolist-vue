@@ -5,11 +5,52 @@ Vue.use(Vuex)
 
 export default new Vuex.Store({
   state: {
+    todos: [
+      {
+        id:1,
+        title: "Clean the house",
+        name: "Andreas",
+      },
+
+      {
+        id:2,
+        title: "Pick up c",
+        name: "Sofia",
+    
+      },
+
+      {
+        id:3,
+        title: "Book meeting with X",
+        name: "Gabrielle",
+
+      
+      },
+
+      {
+        id:4,
+        title: "Book ticket to L",
+        name: "David",
+      },
+
+    ],
   },
-  mutations: {
+  
+  getters:{
+
   },
+
   actions: {
+
   },
+
+  mutations: {
+    addNewTodo(state, todoToAdd){
+      state.todos.unshift(todoToAdd);
+    }
+ 
+  },
+ 
   modules: {
   }
 })

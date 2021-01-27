@@ -1,64 +1,77 @@
 <template>
   <div class="todo-item">
-    <p class="name">Emma's Todo - Added 26/1-2020</p>
+    <p class="name">{{todo.name}}'s todo | Added 26/1-2020</p>
 
     <div class="name-wrapper">
-       <div class="card-title"><h1> Title Card Title </h1></div>
-        <div class="buttons">
-          <button class="check-button">
-            <img src="../assets/check.svg" alt="" />
-          </button>
-          <button class="trash-button">
-            <img src="../assets/trash.svg" alt="" />
-          </button>
-  
-   
+      <div class="card-title"><p>{{todo.title}}</p></div>
+      <div class="buttons">
+        <button class="check-button">
+          <img src="../assets/check.svg" alt="" />
+        </button>
+        <button class="trash-button">
+          <img src="../assets/trash.svg" alt="" />
+        </button>
+      </div>
     </div>
-    </div>
-            
-
- 
-
-
-    
   </div>
 </template>
 
 <script>
-export default {};
+export default {
+  props: ['todo'],
+
+};
 </script>
 
 <style scoped>
 .todo-item {
   min-width: 500px;
   max-width: 800px;
-  max-height: 300px;
+  max-height: 150px;
   border-radius: 40px;
-  padding: 2rem;
   background: #ecf0f3;
   box-shadow: 13px 13px 20px #cbced1, -13px -13px 20px #ffffff;
-  margin: 1.5rem 0px; 
-  
+  margin: 1.5rem 0px;
+  padding: 1rem;
 }
-
 
 .name {
   font-style: italic;
+  margin: 0px;
+  padding-left: 1rem;
+  padding-top: 0.2rem;
   font-size: 0.8rem;
-}
-
-.name-wrapper{
-    display: flex;
-    justify-content: space-between;
  
+  display: inline-block;
+  color: #526af2; 
+
 }
 
+.name-wrapper {
+  display: flex;
+  justify-content: space-between;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  margin: 0px;
+}
+
+.card-title p {
+  font-weight: bold;
+  font-size: 1.8rem;
+}
 button {
   border-radius: 60px;
   background: #ecf0f3;
   box-shadow: 13px 13px 20px #cbced1, -13px -13px 20px #ffffff;
   border: none;
-  padding: 1rem; 
+  padding: 1rem;
+}
+
+.buttons {
+  padding: 0px;
+  margin: 0px;
+  display: flex;
+  align-items: center;
 }
 
 .check-button {
@@ -75,6 +88,4 @@ button:active {
   border-radius: 25px;
   box-shadow: inset 8px 8px 8px #cbced1, inset -8px -8px 8px #ffffff;
 }
-
-
 </style>
