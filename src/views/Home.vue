@@ -1,13 +1,14 @@
 <template>
 <div class="container">
-  <div v-if="todos.length >0">
+  <h1>Todo Task's</h1>
+  <ul v-if="todos.length >0">
     <todo-item
     v-for="(todo,i) in todos"
     :key="i"
     :todo="todo"
     />
   
-  </div>
+  </ul>
 
 </div>
 

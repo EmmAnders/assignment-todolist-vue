@@ -14,17 +14,25 @@
 *::before,
 *::after {
   box-sizing: border-box;
- 
 }
 
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+body{
   color: #242f6b;
   background: #ecf0f3;
   height: 100vh;
   width: 100vw;
+  margin: 0 auto; 
+  font-family: Avenir, Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+}
+
+#app {
+
+max-width: 1200px; 
+margin: auto;
+
 
 }
 

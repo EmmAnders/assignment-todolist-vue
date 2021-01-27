@@ -5,13 +5,13 @@ Vue.use(Vuex)
 
 export default new Vuex.Store({
   state: {
-    isDone: false,
     todos: [
       {
         id:1,
         title: "Clean the house",
         name: "Andreas",
         date: new Date(2020, 0, 28, 10, 33, 30, 0),
+        completed: true,
       },
 
       {
@@ -19,6 +19,7 @@ export default new Vuex.Store({
         title: "Pick up c",
         name: "Sofia",
         date: new Date(2020, 0, 24, 10, 33, 30, 0),
+        completed: false,
     
       },
 
@@ -27,6 +28,7 @@ export default new Vuex.Store({
         title: "Book meeting with X",
         name: "Gabrielle",
         date: new Date(2020, 0, 28, 10, 33, 30, 0),
+        completed: false,
 
       
       },
@@ -36,12 +38,14 @@ export default new Vuex.Store({
         title: "Book ticket to L",
         name: "David",
         date: new Date(2020, 0, 5, 10, 33, 30, 0),
+        isComplete: false,
       },
 
     ],
   },
   
   getters:{
+
 
   },
 
@@ -59,8 +63,9 @@ export default new Vuex.Store({
     },
 
     toggleCheck(){
-    this.isDone = !this.isDone; 
-    console.log(this.isDone);
+    this.isComplete = !this.isComplete;
+
+    console.log(this.isComplete);
     }
  
  

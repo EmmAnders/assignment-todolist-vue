@@ -1,21 +1,25 @@
 <template>
-  <div class="todo-item">
+  <li class="todo-item">
+    <div >
     <p class="name">{{ todo.name }}'s todo | Added On: {{todo.date}}</p>
 
-    <div class="name-wrapper">
+    <div class="name-wrapper" >
       <div class="card-title">
         <p>{{ todo.title }}</p>
       </div>
+
       <div class="buttons">
-        <button @click.prevent="completeTodo" class="check-button">
+        <button @click.prevent="toggleComplete">
           <img src="../assets/check.svg" alt="" />
         </button>
-        <button  @click.prevent="deleteTodo" class="trash-button">
+        <button  @click.prevent="deleteTodo">
         <img src="../assets/trash.svg" alt="" />
         </button>
       </div>
+
+    </div> 
     </div>
-  </div>
+  </li>
 </template>
 
 <script>
@@ -26,8 +30,9 @@ export default {
     deleteTodo() {
       this.$store.commit("deleteTodo", this.todo);
     },
-    completeTodo() {
+    toggleComplete() {
     this.$store.commit("toggleCheck", this.todo);
+  
     },
   },
 };
@@ -98,7 +103,15 @@ button:active {
   box-shadow: inset 8px 8px 8px #cbced1, inset -8px -8px 8px #ffffff;
 }
 
-.done{
-  background-color: pink; 
+li{
+  list-style-type: none;
+}
+
+.complete{
+  background: pink; 
+}
+
+.notComplete{
+  background: black; 
 }
 </style>

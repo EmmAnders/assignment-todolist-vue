@@ -25,6 +25,7 @@ export default {
       title: "",
       name: "",
       date: null,
+      isComplete: false,
       
     };
   },
@@ -39,6 +40,7 @@ export default {
         title: this.title,
         name: this.name,
         date: dateTime,
+        isComplete: this.isComplete, 
       };
       
       this.$store.commit("addNewTodo", newTodo);
