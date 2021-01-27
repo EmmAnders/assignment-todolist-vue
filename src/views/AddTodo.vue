@@ -24,6 +24,7 @@ export default {
       id: 1,
       title: "",
       name: "",
+      addedOn: "",
     };
   },
 
@@ -34,6 +35,7 @@ export default {
         name: this.name,
       };
       this.$store.commit("addNewTodo", newTodo);
+      this.$router.push({ name: "TodoList" });
     },
   },
 };

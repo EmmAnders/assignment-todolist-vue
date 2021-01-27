@@ -1,15 +1,17 @@
 <template>
   <div class="todo-item">
-    <p class="name">{{todo.name}}'s todo | Added 26/1-2020</p>
+    <p class="name">{{ todo.name }}'s todo | Added On: {{addedOn}}</p>
 
     <div class="name-wrapper">
-      <div class="card-title"><p>{{todo.title}}</p></div>
+      <div class="card-title">
+        <p>{{ todo.title }}</p>
+      </div>
       <div class="buttons">
         <button class="check-button">
           <img src="../assets/check.svg" alt="" />
         </button>
-        <button class="trash-button">
-          <img src="../assets/trash.svg" alt="" />
+        <button @click.prevent="deleteTodo" class="trash-button">
+        <img src="../assets/trash.svg" alt="" />
         </button>
       </div>
     </div>
@@ -18,8 +20,13 @@
 
 <script>
 export default {
-  props: ['todo'],
+  props: ["todo"],
 
+  methods: {
+    deleteTodo() {
+      this.$store.commit("deleteTodo", this.todo);
+    },
+  },
 };
 </script>
 
@@ -41,10 +48,9 @@ export default {
   padding-left: 1rem;
   padding-top: 0.2rem;
   font-size: 0.8rem;
- 
-  display: inline-block;
-  color: #526af2; 
 
+  display: inline-block;
+  color: #526af2;
 }
 
 .name-wrapper {

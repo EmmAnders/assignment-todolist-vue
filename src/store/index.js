@@ -47,7 +47,12 @@ export default new Vuex.Store({
   mutations: {
     addNewTodo(state, todoToAdd){
       state.todos.unshift(todoToAdd);
+    },
+
+    deleteTodo(state, todoToDelete){
+      state.todos = state.todos.filter((todo) => todoToDelete !== todo);
     }
+ 
  
   },
  
