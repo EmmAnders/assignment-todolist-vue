@@ -7,70 +7,73 @@ export default new Vuex.Store({
   state: {
     todos: [
       {
-        id:1,
+        id:"0",
         title: "Clean the house",
         name: "Andreas",
         date: new Date(2020, 0, 28, 10, 33, 30, 0),
-        completed: true,
+        done: false,
       },
 
       {
-        id:2,
+        id:"1",
         title: "Pick up c",
         name: "Sofia",
         date: new Date(2020, 0, 24, 10, 33, 30, 0),
-        completed: false,
+        done: false
     
       },
 
       {
-        id:3,
+        id:"2",
         title: "Book meeting with X",
         name: "Gabrielle",
         date: new Date(2020, 0, 28, 10, 33, 30, 0),
-        completed: false,
-
-      
+        done: false,
       },
 
       {
-        id:4,
+        id:"3",
         title: "Book ticket to L",
         name: "David",
         date: new Date(2020, 0, 5, 10, 33, 30, 0),
-        isComplete: false,
+        done: false,
       },
 
     ],
   },
   
-  getters:{
-
-
-  },
-
   actions: {
-
+   
   },
+
+  
+  getters: {
+    sortedToDos(state) {
+      return state.todos.slice().sort((a,b) => {
+        if(!a.done && b.done) return -1;
+        if(a.done && b.done) return 0;
+        if(a.done && !b.done) return 1;
+      });
+    }
+  },
+ 
 
   mutations: {
-    addNewTodo(state, todoToAdd){
-      state.todos.unshift(todoToAdd);
+    addNewTodo(state, todo){
+      state.todos.unshift(todo);
     },
 
     deleteTodo(state, todoToDelete){
-      state.todos = state.todos.filter((todo) => todoToDelete !== todo);
+      state.todos = state.todos.filter(todo => todoToDelete !== todo);
     },
 
-    toggleCheck(){
-    this.isComplete = !this.isComplete;
 
-    console.log(this.isComplete);
+    markComplete(state, todo) {
+      todo.done = !todo.done
     }
- 
- 
-  },
- 
+
+},
+
   modules: {
   }
 })

@@ -1,48 +1,48 @@
 <template>
-<div class="container">
-  <h1>Todo Task's</h1>
-  <ul v-if="todos.length >0">
-    <todo-item
-    v-for="(todo,i) in todos"
-    :key="i"
-    :todo="todo"
-    />
-  
-  </ul>
+  <div class="container">
+    <h1>Todos</h1>
 
-</div>
+    <ul class="todo">
+      <todo-item v-for="(todo, i) in sortedToDos" 
+      :key="i" 
+      :todo="todo" />
+    </ul>
 
+  </div>
 </template>
 
 <script>
-import TodoItem from '../components/TodoItem';
- 
+import TodoItem from "../components/TodoItem";
+
+
 export default {
- components: {
-  TodoItem, 
+  components: {
+    TodoItem,
   },
 
-  computed:{
-  todos(){
-    return this.$store.state.todos;
-  }
-  },
+  computed: {
+  sortedToDos () {
+    return this.$store.getters.sortedToDos;
+  }, 
+
+  todos() {
+      return this.$store.state.todos;
+    },
+}
+
 };
-
 </script>
 
 
 <style scoped>
-
-.container{
+.container {
   display: flex;
   align-items: center;
   flex-direction: column;
   justify-content: center;
 }
 
-h1{
-  margin-top: 5rem; 
+h1 {
+  margin-top: 5rem;
 }
-
 </style>

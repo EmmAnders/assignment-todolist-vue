@@ -21,26 +21,25 @@ export default {
   components: {},
   data() {
     return {
-      id: 1,
+      id: null,
       title: "",
       name: "",
       date: null,
-      isComplete: false,
+      done: false,
       
     };
   },
 
 
-
   methods: {
     createTodo() {
       let dateTime = new Date;
-    
       let newTodo = {
+        id: this.id,
         title: this.title,
         name: this.name,
         date: dateTime,
-        isComplete: this.isComplete, 
+        done: this.done, 
       };
       
       this.$store.commit("addNewTodo", newTodo);
@@ -127,4 +126,6 @@ textarea {
 .add-button:active {
   background: #526af2ae;
 }
+
+
 </style>
