@@ -1,17 +1,16 @@
 <template>
   <form @submit.prevent="createTodo" class="todo-wrapper">
-    <div class="title">CREATE A TODO</div>
     <div class="fields">
       <div class="author">
         <img src="../assets/smile.svg" alt="" />
-        <input type="text" placeholder="This todo belongs to" required v-model="name" />
+        <input type="text" placeholder="This To-Do Belongs to.." required v-model="name" />
       </div>
       <div class="todo-text">
         <img src="../assets/pen.svg" alt="" />
-        <input type="text" placeholder="Description" required v-model="title" />
+        <input type="text" placeholder="The To-Do.." required v-model="title" />
       </div>
     </div>
-    <button class="add-button">ADD TODO</button>
+    <button class="add-button">ADD</button>
   </form>
 </template>
 
@@ -21,12 +20,10 @@ export default {
   components: {},
   data() {
     return {
-      id: null,
       title: "",
       name: "",
       date: null,
       done: false,
-      
     };
   },
 
@@ -44,10 +41,7 @@ export default {
       
       this.$store.commit("addNewTodo", newTodo);
       this.$router.push({ name: "TodoList" });
-    },
-
-
-  
+    },  
   },
 };
 
@@ -56,22 +50,9 @@ export default {
 
 <style scoped>
 .todo-wrapper {
-  width: 600px;
-  height: 550px;
-  padding: 60px 35px 35px 35px;
-  border-radius: 40px;
-  background: #ecf0f3;
-  box-shadow: 13px 13px 20px #cbced1, -13px -13px 20px #ffffff;
+  max-width: 600px;
   margin: 0 auto;
   margin-top: 5%;
-}
-
-.title {
-  text-align: center;
-  font-size: 28px;
-  padding-top: 24px;
-  letter-spacing: 0.5px;
-  color: #242f6b;
 }
 
 .fields {
@@ -85,9 +66,9 @@ textarea {
   background: none;
   font-size: 18px;
   color: #242f6b;
-  padding: 20px 10px 20px 5px;
-  font-family: "poppins";
+  padding: 30px 10px 30px 5px;
 }
+
 .author,
 .todo-text {
   margin-bottom: 30px;
@@ -113,7 +94,6 @@ textarea {
   border-radius: 30px;
   font-size: 20px;
   font-weight: 700;
-  font-family: "Lato", sans-serif;
   color: #fff;
   text-align: center;
   background: #526af2;
@@ -123,8 +103,23 @@ textarea {
 .add-button:hover {
   background: #526af2ae;
 }
+
 .add-button:active {
   background: #526af2ae;
+}
+
+@media (max-width: 576px) {
+
+.todo-wrapper {
+  max-width: 350px;
+  margin: 0 auto;
+}
+
+.fields {
+  width: 100%;
+  padding: 0px;
+}
+  
 }
 
 

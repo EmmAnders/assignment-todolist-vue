@@ -15,15 +15,12 @@
   </div>
 </template>
 
-
 <style scoped>
 #about {
-  width: 100vh;
-  height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 0 auto;
+  margin-top: 5%; 
 }
 
 .content-box {
@@ -33,8 +30,16 @@
   box-shadow: 13px 13px 20px #cbced1, -13px -13px 20px #ffffff;
 }
 
-p,
-h1 {
-  letter-spacing: 0.5px;
+@media (max-width: 576px) {
+.content-box {
+  width: 300px; 
 }
+
+#about {
+  margin: 0px; 
+}
+
+  
+}
+
 </style>

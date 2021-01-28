@@ -7,16 +7,14 @@ export default new Vuex.Store({
   state: {
     todos: [
       {
-        id:"0",
-        title: "Clean the house",
+        title: "Buy Milk",
         name: "Andreas",
         date: new Date(2020, 0, 28, 10, 33, 30, 0),
         done: false,
       },
 
       {
-        id:"1",
-        title: "Pick up c",
+        title: "Pay Bills",
         name: "Sofia",
         date: new Date(2020, 0, 24, 10, 33, 30, 0),
         done: false
@@ -24,29 +22,21 @@ export default new Vuex.Store({
       },
 
       {
-        id:"2",
-        title: "Book meeting with X",
+        title: "Do Laundry",
         name: "Gabrielle",
         date: new Date(2020, 0, 28, 10, 33, 30, 0),
         done: false,
       },
 
       {
-        id:"3",
-        title: "Book ticket to L",
+        title: "Buy Train Ticket To Uppsala",
         name: "David",
         date: new Date(2020, 0, 5, 10, 33, 30, 0),
         done: false,
       },
-
     ],
   },
-  
-  actions: {
-   
-  },
 
-  
   getters: {
     sortedToDos(state) {
       return state.todos.slice().sort((a,b) => {
@@ -57,7 +47,6 @@ export default new Vuex.Store({
     }
   },
  
-
   mutations: {
     addNewTodo(state, todo){
       state.todos.unshift(todo);
@@ -67,13 +56,9 @@ export default new Vuex.Store({
       state.todos = state.todos.filter(todo => todoToDelete !== todo);
     },
 
-
     markComplete(state, todo) {
       todo.done = !todo.done
     }
-
 },
-
-  modules: {
-  }
 })
+

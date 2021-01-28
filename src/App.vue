@@ -29,19 +29,16 @@ body{
 }
 
 #app {
-
 max-width: 1200px; 
 margin: auto;
-
-
 }
 
 #nav {
-  padding: 30px;
+  padding: 2rem;
   font-size: 1.5rem; 
   margin: 0 auto; 
   text-align: center;
-  
+  margin-top: 3rem; 
 }
 
 #nav a {
@@ -49,6 +46,7 @@ margin: auto;
   color: #242f6b;
   padding: 1rem; 
   text-decoration: none;
+  font-size: 1.7rem; 
 }
 
 #nav a.router-link-exact-active {
@@ -58,5 +56,22 @@ margin: auto;
 
 p{
 font-size: 1.2rem; 
+}
+
+@media (max-width: 576px) {
+
+#nav {
+  padding: 2rem; 
+  display: flex; 
+  flex-wrap: wrap;
+  flex-direction: column;
+  margin-top: 0rem;
+}
+
+#nav a {
+  padding: 1rem;   
+  font-size: 1.5rem; 
+}
+  
 }
 </style>
