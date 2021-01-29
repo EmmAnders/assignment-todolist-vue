@@ -1,5 +1,5 @@
 <template>
-  <form @submit.prevent="createTodo" class="todo-wrapper">
+  <form @submit.prevent="createTodo" class="container">
     <div class="fields">
       <div class="author">
         <img src="../assets/smile.svg" alt="" />
@@ -16,8 +16,9 @@
 
 <script>
 export default {
+
   name: "addtodo",
-  components: {},
+
   data() {
     return {
       title: "",
@@ -26,7 +27,6 @@ export default {
       done: false,
     };
   },
-
 
   methods: {
     createTodo() {
@@ -44,21 +44,20 @@ export default {
     },  
   },
 };
-
-
 </script>
 
+
 <style scoped>
-.todo-wrapper {
+.container {
   max-width: 600px;
   margin: 0 auto;
   margin-top: 5%;
-}
+  }
 
 .fields {
   width: 100%;
   padding: 75px 5px 5px 5px;
-}
+  }
 .fields input,
 textarea {
   border: none;
@@ -67,23 +66,23 @@ textarea {
   font-size: 18px;
   color: #242f6b;
   padding: 30px 10px 30px 5px;
-}
+  }
 
 .author,
 .todo-text {
   margin-bottom: 30px;
   border-radius: 25px;
   box-shadow: inset 8px 8px 8px #cbced1, inset -8px -8px 8px #ffffff;
-}
+  }
 
 .fields img {
   height: 22px;
   margin: 0 10px -3px 25px;
-}
+  }
 
 ::placeholder {
   color: #242f6b;
-}
+  }
 
 .add-button {
   outline: none;
@@ -99,28 +98,26 @@ textarea {
   background: #526af2;
   box-shadow: 3px 3px 8px #b1b1b1, -3px -3px 8px #ffffff;
   transition: 0.5s;
-}
+  }
 .add-button:hover {
   background: #526af2ae;
-}
+  }
 
 .add-button:active {
   background: #526af2ae;
-}
+  }
 
 @media (max-width: 576px) {
 
-.todo-wrapper {
+.container {
   max-width: 350px;
   margin: 0 auto;
-}
+  }
 
 .fields {
   width: 100%;
   padding: 0px;
+  }
 }
-  
-}
-
 
 </style>

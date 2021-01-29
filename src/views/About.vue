@@ -1,6 +1,6 @@
 <template>
-  <div id="about">
-    <div class="content-box">
+  <section id="about">
+    <div class="container">
       <h1>This is an about page</h1>
       <p>
         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
@@ -12,7 +12,7 @@
         mollit anim id est laborum.
       </p>
     </div>
-  </div>
+  </section>
 </template>
 
 <style scoped>
@@ -23,7 +23,7 @@
   margin-top: 5%; 
 }
 
-.content-box {
+.container{
   width: 550px;
   padding: 60px 35px 35px 35px;
   border-radius: 40px;
@@ -31,7 +31,7 @@
 }
 
 @media (max-width: 576px) {
-.content-box {
+.container {
   width: 300px; 
 }
 
@@ -39,7 +39,6 @@
   margin: 0px; 
 }
 
-  
 }
 
 </style>

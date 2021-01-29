@@ -1,12 +1,12 @@
 <template>
-  <div id="app">
-    <div id="nav">
+  <main id="app">
+    <nav id="nav">
       <router-link to="/">Todo-List </router-link> 
       <router-link to="/addtodo">Add Todo </router-link> 
       <router-link to="/about">About </router-link>
-    </div>
+    </nav>
     <router-view />
-  </div>
+  </main>
 </template>
 
 <style>
@@ -43,7 +43,6 @@ margin: auto;
 
 #nav a {
   font-weight: bold;
-  color: #242f6b;
   padding: 1rem; 
   text-decoration: none;
   font-size: 1.7rem; 
@@ -52,10 +51,6 @@ margin: auto;
 #nav a.router-link-exact-active {
   color: #242f6b6c;
   text-decoration: underline;
-}
-
-p{
-font-size: 1.2rem; 
 }
 
 @media (max-width: 576px) {

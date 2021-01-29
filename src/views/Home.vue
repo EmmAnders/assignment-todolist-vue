@@ -1,9 +1,9 @@
 <template>
-  <div>
+  <section>
     <ul>
       <todo-item v-for="(todo, i) in sortedToDos" :key="i" :todo="todo" />
     </ul>
-  </div>
+  </section>
 </template>
 
 <script>
