@@ -29,7 +29,7 @@ export default new Vuex.Store({
       },
 
       {
-        title: "Buy Train Ticket To Uppsala",
+        title: "Lorem Ipsum",
         name: "David",
         date: new Date(2020, 0, 5, 10, 33, 30, 0),
         done: false,
