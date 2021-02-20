@@ -21,19 +21,6 @@ export default new Vuex.Store({
     
       },
 
-      {
-        title: "Do Laundry",
-        name: "Gabrielle",
-        date: new Date(2020, 0, 28, 10, 33, 30, 0),
-        done: false,
-      },
-
-      {
-        title: "Lorem Ipsum",
-        name: "David",
-        date: new Date(2020, 0, 5, 10, 33, 30, 0),
-        done: false,
-      },
     ],
   },
 

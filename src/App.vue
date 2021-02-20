@@ -3,7 +3,6 @@
     <nav id="nav">
       <router-link to="/">Todo-List </router-link> 
       <router-link to="/addtodo">Add Todo </router-link> 
-      <router-link to="/about">About </router-link>
     </nav>
     <router-view />
   </main>
@@ -35,7 +34,6 @@ margin: auto;
 
 #nav {
   padding: 2rem;
-  font-size: 1.5rem; 
   margin: 0 auto; 
   text-align: center;
   margin-top: 3rem; 
@@ -45,7 +43,10 @@ margin: auto;
   font-weight: bold;
   padding: 1rem; 
   text-decoration: none;
-  font-size: 1.7rem; 
+  font-size: 1.4rem; 
+}
+#nav a:visited {
+  color:  #242f6b;
 }
 
 #nav a.router-link-exact-active {
