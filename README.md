@@ -1,5 +1,10 @@
 # assignment-todolist-vue
 
+View live: 
+https://vue-app-todolist.netlify.app/
+
+
+
 ## Project setup
 ```
 npm install
